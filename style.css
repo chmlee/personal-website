@@ -24,21 +24,42 @@ nav ul {
   border-width: 3px;
   font-size: 20px;
   padding: 10px;
-  background: #E2E0E1;
+  background: #;
   list-style-type: none;
+  justify-content: center;
 }
 
-a.menu-link:hover {
-  color: #9FAE8B;
+a {
+  color: #2c9678;
+  text-decoration: none;
 }
 
+.menu a {
+  color: #144a74;
+  text-decoration: none;
+}
 
 @media (min-width: 500px) {
 
-  nav ul {
+  nav ul { 
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+  }
+
+  .main-no-side-bar {
+    grid-column: line 3 / line 11;
+    font-size: 20px;
+  }
+
+  .side-bar {
+    grid-colum: line 2 / line 4;
+    font-size: 15px;
+  }
+
+  .main {
+    grid-column: line 4 / line 12;
+    font-size: 20px;
   }
 
 }
