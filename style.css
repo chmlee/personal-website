@@ -1,0 +1,48 @@
+html {    
+  background-color: #EFEFEF;    
+  font-family: "Georgia";    
+}    
+
+.wrapper {                  
+  display: grid;
+  grid-template-columns: repeat(12, [line] 1fr);    
+  grid-gap: 20px;
+  padding: 30px  
+}      
+
+.wrapper > * {   
+  grid-column: line 1 / span 12;
+}
+
+header {
+  display: flex;
+  font-size: 40px;
+}
+
+nav ul {
+  border-style: solid;
+  border-width: 3px;
+  font-size: 20px;
+  padding: 10px;
+  background: #E2E0E1;
+  list-style-type: none;
+}
+
+a.menu-link:hover {
+  color: #9FAE8B;
+}
+
+
+@media (min-width: 500px) {
+
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+}
+
+
+
+

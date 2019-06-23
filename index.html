@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Chih-Ming Lee's Website</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<style>
+
+.intro-photo {
+  width: 100%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.cryptedmail:after {    
+  content: attr(data-name) "@" attr(data-domain) "." attr(    data-tld);         
+}
+
+
+@media (min-width: 500px) {
+  .intro {
+    grid-column: line 3 / line 11;
+    font-size: 20px;
+  }
+  
+  .intro-photo {
+    float: left;
+    width: 200px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+</style>
+
+<body>
+
+<div class="wrapper">
+  <header class="-header">Chih-Ming Louis Lee</header>
+  <nav class="menu-container">
+    <ul class="menu">
+      <li>
+        <a href="index.html" class="menu-link">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="resume/resume.pdf" class="menu-link">
+          Resume
+        </a>
+      </li>
+      <li>
+        <a href="" class="menu-link">
+          Research
+        </a>
+      </li>
+      <li>
+        <a href="" class="menu-link">
+          Project
+        </a>
+      </li>
+      <li>
+        <a href="" class="menu-link">
+          Blog
+        </a>
+      </li>
+      <li>
+        <a href="" class="menu-link">
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="intro">
+    <p>
+      <img src="image/test_photo.jpg" class="intro-photo">
+      I am an undergraduate stuying Political Science and Mathematics in <a href="https://illinois.edu">University of Illinois Urbana-Champaign</a>. I'm interested in comparative politics and political methodology. In particular, I study ethnic identification with both formal modeling and statitical analysis.
+    </p>
+    <p>  
+      I am also a research assistant of <a href="https://clinecenter.illinois.edu">Cline Center for Advance Social Research</a>, working on Composition of Religious and Ethnic Group (CREG) Project.
+    </p>
+    <p>
+      Download my resume <a href="">here</a>.
+      You can contant me by
+        <a href="#" class="cryptedmail"
+          data-name="clee165"
+          data-domain="illinois"
+          data-tld="com"
+          onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"></a>,
+      or follow me on <a href="https://github.com/chmlee">Github</a> and <a href="https://twitter.com/chmlee1202">Twitter</a>
+      
+    </p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
