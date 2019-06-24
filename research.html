@@ -46,5 +46,63 @@
   </nav>
 
 <!--Template End 2-->
+
+
+  <div class="main-no-side-bar">
+    
+    <p>
+      This is a list of my research:
+    </p>
+
+
+
+    <h1 class="item-name" onclick="toggleShow('article2')">
+      Social Identification of Peripheral Ethnic Groups 
+    </h1>
+  
+    <div class="hide-content" id="article2">
+      <footer>
+        Work In Progress
+      </footer>
+    </div>
+
+
+
+    <h1 class="item-name" onclick="toggleShow('article1')">
+      Measuring Ethnic Spatial Segregation 
+    </h1>
+  
+    <div class="hide-content" id="article1">
+      <p>
+        In this paper I propose a new measurement for ethnic diversity by calculating a new segregation index. Unlike other similar segregation index that use administrative units as proxies, I take geographical proximity into account to prevent potential gerrymandering. The new measurement also minimize the effect of "checkerboard problem." Finally I measure the segregation index of Belgium.
+      </p>
+      <p>
+        Download the paper <a href="">here</a>
+      </p>
+      <footer>
+        Last updated May 15, 2017
+      </footer>
+    </div>
+    
+
+  </div>
+
+
+<script>
+  function toggleShow(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+     x.style.display = "block";
+    } else {
+     x.style.display = "none";
+   }
+  }
+</script>
+
+
+
+
+
+
 </div>
 </body>

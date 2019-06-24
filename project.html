@@ -9,6 +9,12 @@
 </head>
 
 <!--Template End 1-->
+
+<style>
+  
+
+</style>
+
 <!--Template Start 2-->
 
 <body>
@@ -44,7 +50,64 @@
       </li>
     </ul>
   </nav>
-
 <!--Template End 2-->
+
+  <div class="main-no-side-bar">
+    
+    <p>
+      I code for fun. Here are some of my projects:
+    </p>
+
+
+
+    <h1 class="item-name" onclick="toggleShow('track-mtd')">
+      track-mtd
+    </h1>
+  
+    <div class="hide-content" id="track-mtd">
+      <p>
+        This program tracks the the on-time performance of Champaign-Urbana Mass Transit District (MTD). Visit the <a href="https://github.com/chmlee/track-mtd">GitHub</a> page for the source code. 
+      </p>
+    </div>
+
+
+
+    <h1 class="item-name" onclick="toggleShow('mtd-api')">
+      mtd-api  
+    </h1>
+  
+    <div class="hide-content" id="mtd-api">
+      <p>
+        This is an unofficial Python client for Champaign-Urbana Mass Transit District (MTD) API. Visit the <a href="https://github.com/chmlee/mtd-api">GitHub</a> page for the source code. 
+      </p>
+    </div>
+    
+
+  </div>
+
+
+
+
+
+
 </div>
+
+
+
+
+
+
 </body>
+
+<script>
+  function toggleShow(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+     x.style.display = "block";
+    } else {
+     x.style.display = "none";
+   }
+  }
+</script>
+
+</html>

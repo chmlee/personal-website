@@ -29,15 +29,50 @@ nav ul {
   justify-content: center;
 }
 
+nav ul li:hover{
+  background-color: #93b5cf;
+}
+
 a {
   color: #2c9678;
   text-decoration: none;
 }
 
+a:hover{
+  background-color: #93b5cf;
+}
+
 .menu a {
   color: #144a74;
   text-decoration: none;
+  font-size: 20px;
 }
+
+h1 {
+  background-color: #d8e3e7;  
+  font-size: 25px;
+  padding: 7px;
+  font-weight: normal;
+}
+
+.item-name {
+
+  //border-style: solid;
+  //border-width: 2px;
+}
+
+.item-name:hover {
+  background-color: #93b5cf;
+}
+
+.hide-content {
+  display: none;
+}
+
+footer {
+  font-size: 15px;
+}
+
 
 @media (min-width: 500px) {
 
@@ -53,8 +88,10 @@ a {
   }
 
   .side-bar {
-    grid-colum: line 2 / line 4;
+    grid-column: line 2 / line 4;
+    height: 300px;
     font-size: 15px;
+    background-color: red;
   }
 
   .main {
