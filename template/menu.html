@@ -1,0 +1,11 @@
+<nav class="menu-container">      
+  <ul class="menu-list">    
+    {% for menu_item in menu_list %}    
+      <li>    
+        <a href="/static/{{menu_item}}/index.html" class="menu-link">
+          {{menu_item}}
+        </a>    
+      </li>     
+    {% endfor %}    
+  </ul>    
+</nav>    
