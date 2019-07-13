@@ -1,1 +1,1 @@
-Download my resume [here](../doc/resume.pdf)
+Download my resume [here](../file/resume.pdf)
