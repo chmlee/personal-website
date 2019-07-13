@@ -43,10 +43,10 @@ if len(file_not_found) != 0:      #missing content, exit program
 if "backup" in os.listdir():
     shutil.rmtree('backup')
 os.mkdir('backup')
-if "doc" not in os.listdir():
-    os.mkdir('doc')
-for item in os.listdir('doc'):
-    before = "doc/" + item
+if "docs" not in os.listdir():
+    os.mkdir('docs')
+for item in os.listdir('docs'):
+    before = "docs/" + item
     after = "backup/" + item
     os.rename(before, after)
 
@@ -74,11 +74,11 @@ for menu_item in config_menu:
             content = content
     )
     # write html
-    with open("doc/" + menu_item + ".html", 'w') as file: 
+    with open("docs/" + menu_item + ".html", 'w') as file: 
         file.write(html_output) 
     # create index.html
     if menu_item == "Home":
-        with open("doc/index.html", 'w') as file: 
+        with open("docs/index.html", 'w') as file: 
             file.write(html_output) 
 
 
