@@ -76,7 +76,7 @@ for menu_item in config_menu:
         file.write(html_output) 
     # create index.html
     if menu_item == "Home":
-        with open("static/index.html", 'w') as file: 
-            file.write(html_output) 
+        with open("index.html", 'w') as file: 
+            file.write('<meta http-equiv="Refresh" content="0; static/Home.html" />') 
 
 
