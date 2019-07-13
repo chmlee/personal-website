@@ -71,6 +71,12 @@ for menu_item in config_menu:
             menu_list = config_menu, 
             content = content
     )
+    # write html
     with open("static/" + menu_item + ".html", 'w') as file: 
         file.write(html_output) 
+    # create index.html
+    if menu_item == "Home":
+        with open("static/index.html", 'w') as file: 
+            file.write(html_output) 
+
 
