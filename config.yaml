@@ -1,7 +1,6 @@
 menu:
-    Home: default
-    Resume: defalt
-    Research: list
-    Project: list
-    Blog: list
-    Contact: default
+    Home: plain
+    Resume: plain
+    Research: plain
+    Code: plain
+    Blog: plain
