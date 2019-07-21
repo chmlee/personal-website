@@ -1,0 +1,11 @@
+<nav class="main-menu-container">      
+  <ul class="mod-main-menu">    
+    {% for menu_item in config['Menu'] %}    
+      <li>    
+        <a href="{{menu_item}}.html" class="mod-menu-link">
+          {{menu_item}}
+        </a>    
+      </li>     
+    {% endfor %}    
+  </ul>    
+</nav>    

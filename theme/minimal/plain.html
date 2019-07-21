@@ -1,0 +1,50 @@
+{% from 'custom.jinja' import module %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+      {{ config['Title'] }}
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/{{config['Menu'][config_menu_item]}}.css">
+    <link rel="stylesheet" type="text/css" href="../custom/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../custom/css/{{config['Menu'][config_menu_item]}}.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  
+  <header>
+    {{ config['Title'] }}
+  </header>
+
+  <nav class="menu-wrapper">
+    
+    {% include 'mod-main-menu.html' %}
+
+  </nav>
+
+  <div class="main-wrapper">
+    
+    {% set class = 'main' %}
+    {{module(class = class,
+        config = config, 
+        config_menu_item = config_menu_item,
+        content = content)
+    }}
+
+  </div>
+
+</div>
+
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+</body>
+</html>

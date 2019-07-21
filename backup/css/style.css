@@ -1,0 +1,59 @@
+html {    
+  background-color: #EFEFEF;    
+  font-family: "Georgia";    
+  font-size: 20px;
+}    
+
+.wrapper {                  
+  display: grid;
+  grid-template-columns: repeat(12, [line] 1fr);    
+  grid-gap: 0px;
+  padding: 0% 0%  
+}      
+
+header {
+  display: flex;
+  font-size: 40px;
+}
+
+nav ul {
+  border-style: solid;
+  border-width: 3px;
+  font-size: 20px;
+  padding: 10px;
+  background: #;
+  list-style-type: none;
+  justify-content: center;
+}
+
+nav ul li:hover{
+  background-color: #93b5cf;
+}
+
+a {
+  color: #2c9678;
+  text-decoration: none;
+}
+
+a:hover{
+  background-color: #93b5cf;
+}
+
+.wrapper > * {   
+  grid-column: line 1 / span 12;
+}
+
+@media (min-width: 500px) {
+
+  nav ul { 
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .wrapper {                  
+    padding: 2% 20%  
+  }      
+
+}
+

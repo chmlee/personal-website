@@ -1,0 +1,15 @@
+{% macro module(class, config, config_menu_item, content) %}
+
+  
+    {% for mod in config[config_menu_item][class] %}
+      <div class="{{mod}}">
+        {% if mod == 'content' %}
+          {{ content }}
+        {% else %}
+          {% include 'mod-'+mod+'.html' %}
+        {% endif %}
+      </div>
+    {% endfor %}
+
+
+{% endmacro %}
