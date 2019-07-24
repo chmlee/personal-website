@@ -14,29 +14,18 @@ html {
 header {
   display: flex;
   font-size: 40px;
-}
-
-nav ul {
-  border-style: solid;
-  border-width: 3px;
-  font-size: 20px;
-  padding: 10px;
-  background: #;
-  list-style-type: none;
   justify-content: center;
 }
 
-nav ul li:hover{
-  background-color: #93b5cf;
-}
+
 
 a {
-  color: #2c9678;
+  color: #207f4c;
   text-decoration: none;
 }
 
 a:hover{
-  background-color: #93b5cf;
+  background-color: #83cbac;
 }
 
 .wrapper > * {   
@@ -44,12 +33,6 @@ a:hover{
 }
 
 @media (min-width: 500px) {
-
-  nav ul { 
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
 
   .wrapper {                  
     padding: 2% 20%  

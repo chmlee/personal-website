@@ -36,15 +36,15 @@ for config_menu_item in config['Menu']:
             break
 
 
-# backup all existing html files
-if "backup" in os.listdir():
-    shutil.rmtree('backup')
-os.mkdir('backup')
+# backup everything in static
+if ".backup" in os.listdir():
+    shutil.rmtree('.backup')
+os.mkdir('.backup')
 if "static" not in os.listdir():
     os.mkdir('static')
 for item in os.listdir('static'):
     before = "static/" + item
-    after = "backup/" + item
+    after = ".backup/" + item
     os.rename(before, after)
 
 # loop to create pages
@@ -76,7 +76,7 @@ for config_menu_item in config['Menu']:
     html_output = template.render(
             config = config,
             config_menu_item = config_menu_item,
-            content = content,
+            content = content
     )
 
     # write html
@@ -89,7 +89,55 @@ for config_menu_item in config['Menu']:
         with open("index.html", 'w') as f: 
             f.write(html_output)
 
-# copy css directory
-shutil.copytree('theme/' + config['Theme'] + '/css', 'static/css')    
+
+
+# css
+
+# copy style.css and <template>.cssfrom theme to static
+os.mkdir('static/css')
+d0 = 'theme/' + config['Theme'] + '/css/'
+d1 = 'static/css/'
+before = d0 + 'style.css'
+after = d1 + 'style.css'
+shutil.copyfile(before, after)
+for menu_item in config['Menu']:
+    template = config['Menu'][menu_item]
+    after = d1 + template + '.css'
+    if os.path.isfile(after) == False:
+        before = d0 + template + '.css'
+        shutil.copyfile(before, after)
+
+
+
+# generate mod.css
+# find all mod used
+mod_list = [] 
+for menu_item in config['Menu']: 
+    menu_item_dict = config[menu_item] 
+    for key in menu_item_dict: 
+        for mod in menu_item_dict[key]: 
+            if mod not in mod_list: 
+                mod_list.append(mod) 
+
+# find individual <mod>.css
+with open('static/css/mod.css', 'w') as f:
+    for mod in mod_list:
+        # locate which css to load for each mod
+        target = 'custom/css/' + mod + '.css'
+        if os.path.isfile(target):
+            mod_css = target
+        else:
+            target  = 'theme/' + config_theme + '/css/' + mod + '.css'
+            if os.path.isfile(target):
+                mod_css = target
+            else:
+                target = 'module/' + mod +'style.css'
+                if os.path.isfile(target):
+                    mod_css = target
+                else: mod_css = None
+        # copy <mod>.css into mod.css
+        if mod_css != None:
+            with open(mod_css) as css_file:
+                f.writelines(css_file)
 
 

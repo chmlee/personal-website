@@ -1,0 +1,29 @@
+.mod-main-menu-item {
+  color: #346c9c;
+
+}
+
+.mod-main-menu-item:hover {
+  background-color: #93b5cf;
+}
+
+nav ul {
+  border-style: solid;
+  border-width: 0px;
+  font-size: 25px;
+  padding: 10px;
+  list-style-type: none;
+  justify-content: center;
+}
+
+
+@media (min-width: 500px) {
+  
+  nav ul { 
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+
+}

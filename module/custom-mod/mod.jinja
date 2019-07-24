@@ -6,7 +6,7 @@
         {% if mod == 'content' %}
           {{ content }}
         {% else %}
-          {% include 'mod-'+mod+'.html' %}
+          {% include mod+'/mod.jinja' %}
         {% endif %}
       </div>
     {% endfor %}

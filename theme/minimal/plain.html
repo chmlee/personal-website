@@ -1,17 +1,15 @@
-{% from 'custom.jinja' import module %}
+{% from 'custom-mod/mod.jinja' import module %}
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>
       {{ config['Title'] }}
     </title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/{{config['Menu'][config_menu_item]}}.css">
-    <link rel="stylesheet" type="text/css" href="../custom/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../custom/css/{{config['Menu'][config_menu_item]}}.css">
-
+    {% include 'load-css/mod.jinja' %}
 </head>
+
 
 <body>
 
@@ -21,11 +19,11 @@
     {{ config['Title'] }}
   </header>
 
-  <nav class="menu-wrapper">
+  <div class="menu-wrapper">
     
-    {% include 'mod-main-menu.html' %}
+    {% include 'main-menu/mod.jinja' %}
 
-  </nav>
+  </div>
 
   <div class="main-wrapper">
     
@@ -37,6 +35,10 @@
     }}
 
   </div>
+
+  <footer>
+
+  </footer>
 
 </div>
 
