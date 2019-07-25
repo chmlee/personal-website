@@ -25,18 +25,37 @@ a {
 }
 
 a:hover{
-  background-color: #83cbac;
+  background-color: #9eccab;
 }
+
+
+
 
 .wrapper > * {   
   grid-column: line 1 / span 12;
+
 }
 
-@media (min-width: 500px) {
+.wrapper {                  
+  padding: 2% 0%  
+}      
 
+@media only screen and (min-width: 1000px) {
+  
   .wrapper {                  
-    padding: 2% 20%  
+    padding: 2% 10%  
   }      
 
 }
 
+@media only screen and (min-width: 1500px) {
+
+  .wrapper {                  
+    padding: 2% 20%  
+  }      
+  
+
+@media only screen and (max-width: 800px) {
+
+
+}

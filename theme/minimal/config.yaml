@@ -1,3 +1,4 @@
 plain:
     menu: [main-menu]
     main: [content]
+    footer: [footer]

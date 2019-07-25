@@ -7,6 +7,10 @@
   background-color: #93b5cf;
 }
 
+.menu-wrapper {
+  text-align: center;
+}
+
 nav ul {
   border-style: solid;
   border-width: 0px;
@@ -17,7 +21,7 @@ nav ul {
 }
 
 
-@media (min-width: 500px) {
+@media (min-width: 800px) {
   
   nav ul { 
     display: flex;

@@ -25,7 +25,7 @@ for config_menu_item in config['Menu']:
 
 # search for content file
 content_listdir = os.listdir('content')
-support_format = ["md"]
+support_format = ["md", 'yaml']
 file_not_found = []
 content_file_dict = {}
 for config_menu_item in config['Menu']:
@@ -34,6 +34,7 @@ for config_menu_item in config['Menu']:
         if content_file_name in content_listdir:
             content_file_dict[config_menu_item] = content_file_name
             break
+
 
 
 # backup everything in static
@@ -47,8 +48,29 @@ for item in os.listdir('static'):
     after = ".backup/" + item
     os.rename(before, after)
 
-# loop to create pages
 
+
+# convert all text from md to html
+# find all mod used
+mod_list = [] 
+for menu_item in config['Menu']: 
+    menu_item_dict = config[menu_item] 
+    for key in menu_item_dict: 
+        for mod in menu_item_dict[key]: 
+            if mod not in mod_list: 
+                mod_list.append(mod) 
+
+# convert
+for item in config:
+    if item in mod_list:
+        if 'text' in config[item]:
+            text_md = config[item]['text']
+            md = markdown.Markdown(extensions = ['meta', 'mdx_math'])
+            text_html = md.convert(text_md)
+            config[item]['text'] = text_html
+
+
+# loop to create pages
 # read template
 loader = jinja2.FileSystemLoader(["theme", "module"])
 env = jinja2.Environment(loader = loader)
@@ -56,13 +78,14 @@ for config_menu_item in config['Menu']:
     # read content file if exist
     try:
         content_file_name = content_file_dict[config_menu_item]
-        content_file_ext = content_file_name.split('.')[-1:]
+        content_file_ext = content_file_name.split('.')[-1:][0]
+        print(content_file_ext)
         content_dir = "content/" + content_file_name 
         with open(content_dir, "r") as file: 
             content_file = file.read() 
         # parse content to html
         # md -> html
-        if ext == 'md':
+        if content_file_ext == 'md':
             md = markdown.Markdown(extensions = ['meta', 'mdx_math'])
             content = md.convert(content_file)
             meta = md.Meta
@@ -82,10 +105,17 @@ for config_menu_item in config['Menu']:
     # write html
     with open("static/" + config_menu_item + ".html", 'w') as f: 
         f.write(html_output) 
-    # create index.html
+
+    # create index.html if home
     if config_menu_item == "Home":
+        # adjust css location
         html_output = html_output.replace('css/', 'static/css/')
-        html_output = html_output.replace('../custom', 'custom/')
+        html_output = html_output.replace('../custom', 'custom')
+        # adjust main-menu hred
+        for item in config['Menu']:
+            before = item + '.html'
+            after = 'static/' + before
+            html_output = html_output.replace(before, after)
         with open("index.html", 'w') as f: 
             f.write(html_output)
 
@@ -110,34 +140,30 @@ for menu_item in config['Menu']:
 
 
 # generate mod.css
-# find all mod used
-mod_list = [] 
-for menu_item in config['Menu']: 
-    menu_item_dict = config[menu_item] 
-    for key in menu_item_dict: 
-        for mod in menu_item_dict[key]: 
-            if mod not in mod_list: 
-                mod_list.append(mod) 
-
 # find individual <mod>.css
 with open('static/css/mod.css', 'w') as f:
     for mod in mod_list:
+        print(mod)
         # locate which css to load for each mod
         target = 'custom/css/' + mod + '.css'
         if os.path.isfile(target):
             mod_css = target
+            print(1)
         else:
             target  = 'theme/' + config_theme + '/css/' + mod + '.css'
             if os.path.isfile(target):
                 mod_css = target
+                print(2)
             else:
-                target = 'module/' + mod +'style.css'
+                target = 'module/' + mod +'/style.css'
                 if os.path.isfile(target):
                     mod_css = target
-                else: mod_css = None
+                    print(3)
+                else: 
+                    mod_css = None
+                    print(4)
         # copy <mod>.css into mod.css
         if mod_css != None:
             with open(mod_css) as css_file:
                 f.writelines(css_file)
-
 

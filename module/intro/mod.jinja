@@ -1,0 +1,9 @@
+{% set image = '../' + config['intro']['image'] %}
+{% set text = config['intro']['text'] %}
+
+<div class="mod-intro-container">      
+  <img src="{{ image }}" class = 'intro-image'>
+  <p class="intro-text">
+    {{ text }}  
+  </p>
+</div>    

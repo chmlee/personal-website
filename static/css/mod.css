@@ -1,3 +1,10 @@
+.intro-image {
+  float: left;
+  width: 250px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+
 .mod-main-menu-item {
   color: #346c9c;
 
@@ -5,6 +12,10 @@
 
 .mod-main-menu-item:hover {
   background-color: #93b5cf;
+}
+
+.menu-wrapper {
+  text-align: center;
 }
 
 nav ul {
@@ -17,7 +28,7 @@ nav ul {
 }
 
 
-@media (min-width: 500px) {
+@media (min-width: 800px) {
   
   nav ul { 
     display: flex;
@@ -26,4 +37,15 @@ nav ul {
   }
 
 
+}
+.footer-container { 
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+}
+
+footer {
+  color: #2b333e;
+  font-size: 15px;
 }
