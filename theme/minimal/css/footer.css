@@ -1,11 +1,6 @@
-.footer-container { 
-  position: fixed;
-  width: 100%;
-  bottom: 0px;
-  text-align: center;
-}
 
 footer {
+  text-align: center;
   color: #2b333e;
   font-size: 15px;
 }

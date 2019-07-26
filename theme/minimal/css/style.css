@@ -2,13 +2,16 @@ html {
   background-color: #EFEFEF;    
   font-family: "Georgia";    
   font-size: 20px;
+  position: relative;
+  min-height: 100vh;
 }    
 
 .wrapper {                  
   display: grid;
   grid-template-columns: repeat(12, [line] 1fr);    
   grid-gap: 0px;
-  padding: 0% 0%  
+  padding: 0% 0%;
+  padding-bottom: 2rem;    
 }      
 
 header {
@@ -27,14 +30,19 @@ a {
 a:hover{
   background-color: #9eccab;
 }
-
-
-
-
 .wrapper > * {   
-  grid-column: line 1 / span 12;
+  grid-column: line 1 / line 13;
 
 }
+
+.footer-wrapper {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 2.5rem;  
+}
+
+
 
 .wrapper {                  
   padding: 2% 0%  
@@ -46,16 +54,22 @@ a:hover{
     padding: 2% 10%  
   }      
 
+  .footer-wrapper {
+    width: 80%;
+  }
+
+
 }
 
 @media only screen and (min-width: 1500px) {
-
+  
   .wrapper {                  
     padding: 2% 20%  
   }      
-  
 
-@media only screen and (max-width: 800px) {
+  .footer-wrapper {
+    width: 60%;
+  }
 
 
 }

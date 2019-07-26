@@ -110,7 +110,7 @@ for config_menu_item in config['Menu']:
     if config_menu_item == "Home":
         # adjust css location
         html_output = html_output.replace('css/', 'static/css/')
-        html_output = html_output.replace('../custom', 'custom')
+        html_output = html_output.replace('../', '')
         # adjust main-menu hred
         for item in config['Menu']:
             before = item + '.html'
