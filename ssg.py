@@ -123,7 +123,7 @@ for config_menu_item in config['Menu']:
 
 # css
 
-# copy style.css and <template>.cssfrom theme to static
+# copy style.css and <template>.css from theme to static
 os.mkdir('static/css')
 d0 = 'theme/' + config['Theme'] + '/css/'
 d1 = 'static/css/'
