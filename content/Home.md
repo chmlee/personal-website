@@ -1,7 +1,7 @@
 ---
 title: intro
 ---
-I am an undergraduate majoring Political Science and Mathematics in [University of Illinois Urbana-Champaign](https://illinois.edu/). I focus on comparative politics and political methodology. In particular, I'm interested in ethnic ideneity and formal modeling.
+I am an undergraduate majoring in Political Science and Mathematics in [University of Illinois Urbana-Champaign](https://illinois.edu/). I focus on comparative politics and political methodology. In particular, I'm interested in ethnic ideneity and formal modeling.
 
 I am also a research assistant of [Cline Center for Advance Social Research](https://clinecenter.illinois.edu/), working on Composition of Religious and Ethnic Group (CREG) Project.
 
